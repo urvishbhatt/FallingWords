@@ -1,9 +1,7 @@
 <resources>
     <string name="app_name">FallingWords</string>
-    <string name="introduction_text">Test your Spanish vocabulary with Falling Words App. To win the game, you have to score 5 points. If  the translation is right, then press the CORRECT button and if the translation is wrong, press the WRONG button. You will have 7 seconds to select the option.  You have three lives($). If you do not select/select wrong, then lives will be deducted. </string>
+    <string name="introduction_text">Test your Spanish vocabulary with Falling Words App. To win the game, you have to score 5 points. If the translation is right, then press the CORRECT button and if the translation is wrong, press the WRONG button. You will have 7 seconds to select the option. You have three lives($). If you do not select/select wrong, then lives will be deducted.</string>
     <string name="game_won_h2">Congratulations you won</string>
     <string name="game_loss_h2">You just lost the game</string>
     <string name="game_finished_dec">Repetition is the mother of learning.</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
