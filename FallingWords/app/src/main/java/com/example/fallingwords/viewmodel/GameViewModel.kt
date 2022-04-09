@@ -45,6 +45,10 @@ class GameViewModel : ViewModel() {
 
             val listWords = WordsApi.retrofitService.getWords()
 
+            /**
+             * Create substring from listWords
+             * Size of substring is = total points to win + total lives - 1
+             */
             val i = getRandomNum(listWords.size - (Constants.TOTAL_QUESTIONS + Constants.TOTAL_RETRY))
             totalquestion = listWords.subList(i, i + (Constants.TOTAL_QUESTIONS + Constants.TOTAL_RETRY - 1)) as MutableList<WordProperty>
 
@@ -89,20 +93,33 @@ class GameViewModel : ViewModel() {
             _retry.value = _retry.value?.minus(1)
         }
         if (score.value == Constants.TOTAL_QUESTIONS || retry.value == 0){
-            //TODO Clean ViewModel
+            Log.d(TAG, "playerResponse : Game Finished")
+            return
         } else {
             totalquestion.removeLast()
             nextWord()
         }
     }
 
+    /**
+     * @return string for retry score board
+     */
     fun retryString() : String{
         var tempString = ""
         for(i in 1..retry.value!!) tempString = tempString + "$"
         return tempString
     }
 
+    /**
+     * @return string for players_score score board
+     */
     fun scoreString() : String {
         return score.value.toString() + "/" + Constants.TOTAL_QUESTIONS.toString()
+    }
+
+    override fun onCleared() {
+        super.onCleared()
+        Log.e("onCleared","onCleared")
+        viewModelJob.cancel()
     }
 }

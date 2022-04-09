@@ -33,14 +33,12 @@ class ResultFragment : Fragment() {
         binding.resultImg.setImageResource(R.drawable.game_won)
         binding.resultImg.layoutParams.width = binding.root.layoutParams.width
         binding.gameTitle.text = getString(R.string.game_won_h2)
-        binding.gameDecTextview.text = getString(R.string.game_finished_dec)
     }
 
     private fun isLoss(binding: FragmentResultBinding) {
         binding.resultImg.setImageResource(R.drawable.game_loss)
         binding.resultImg.layoutParams.width = binding.root.layoutParams.width
         binding.gameTitle.text = getString(R.string.game_loss_h2)
-        binding.gameDecTextview.text = getString(R.string.game_finished_dec)
     }
 
 }
